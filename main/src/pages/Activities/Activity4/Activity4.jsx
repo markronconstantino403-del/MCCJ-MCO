@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Activity4.css";
-import PokemonCard from "../../../components/Pokemon-card/PokemonCard";
+import PokemonCard from "../../../components/pokemon-card/PokemonCard";
 
 const Activity4 = () => {
   const [pokemonDB, setPokemonDB] = useState([]);

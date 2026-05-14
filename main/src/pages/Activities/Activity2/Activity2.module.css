@@ -1,0 +1,489 @@
+/* Activity2.module.css - Improved Version */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+/* Main container */
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1e2f 0%, #2d2d44 50%, #1a1a2e 100%);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background effect */
+.app::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-25%, -25%) rotate(0deg);
+  }
+  to {
+    transform: translate(-25%, -25%) rotate(360deg);
+  }
+}
+
+/* White box container */
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 32px;
+  padding: 35px;
+  max-width: 550px;
+  width: 100%;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  animation: slideUp 0.5s ease-out;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title */
+.container h1 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Mode buttons */
+.modeButtons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.modeButtons button {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  background: white;
+  color: #666;
+  border-radius: 60px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+}
+
+.modeButtons button:hover {
+  transform: translateY(-2px);
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.modeButtons button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Timer display */
+.timer {
+  font-size: 80px;
+  font-weight: 800;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  background: linear-gradient(135deg, #1e1e2f 0%, #2d2d44 100%);
+  padding: 30px 20px;
+  border-radius: 24px;
+  margin-bottom: 25px;
+  color: #fff;
+  letter-spacing: 5px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Timer warning animation (for countdown) */
+.timerWarning {
+  animation: pulse 0.5s ease-in-out infinite;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* Control buttons */
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.buttons button {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.buttons button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.buttons button:active {
+  transform: translateY(0);
+}
+
+.start {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+}
+
+.stop {
+  background: linear-gradient(135deg, #ff9800, #fb8c00);
+  box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
+}
+
+.reset {
+  background: linear-gradient(135deg, #f44336, #da190b);
+  box-shadow: 0 4px 10px rgba(244, 67, 54, 0.3);
+}
+
+.lap {
+  background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+  box-shadow: 0 4px 10px rgba(156, 39, 176, 0.3);
+}
+
+/* Countdown setup */
+.countdownSetup {
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  transition: all 0.3s ease;
+}
+
+.countdownSetup h3 {
+  margin-bottom: 15px;
+  color: #667eea;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.countdownSetup div {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.countdownSetup input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.countdownSetup input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.countdownSetup button {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.countdownSetup button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.countdownTarget {
+  color: #666;
+  font-size: 0.85rem;
+  text-align: left;
+  margin-top: 8px;
+}
+
+/* Laps container */
+.lapsContainer {
+  background: #f8f9fa;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 25px;
+  border: 1px solid #e0e0e0;
+}
+
+.lapsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+}
+
+.lapsHeader h3 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.lapsHeader button {
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.lapsHeader button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+.lapsContainer ul {
+  list-style: none;
+  max-height: 180px;
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+}
+
+/* Custom scrollbar */
+.lapsContainer ul::-webkit-scrollbar {
+  width: 6px;
+}
+
+.lapsContainer ul::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 10px;
+}
+
+.lapsContainer ul::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 10px;
+}
+
+.lapsContainer ul::-webkit-scrollbar-thumb:hover {
+  background: #5a67d8;
+}
+
+.lapsContainer li {
+  padding: 12px;
+  background: white;
+  margin: 8px 0;
+  border-radius: 12px;
+  text-align: left;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.lapsContainer li:hover {
+  transform: translateX(5px);
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+.lapsContainer li::before {
+  content: '🏁';
+  margin-right: 10px;
+}
+
+.emptyLaps {
+  color: #999;
+  text-align: center;
+  padding: 30px;
+  font-style: italic;
+  background: white;
+  border-radius: 12px;
+}
+
+/* Status */
+.status {
+  padding: 14px;
+  background: linear-gradient(135deg, #e8eaff, #dfe2ff);
+  border-radius: 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.status strong {
+  color: #667eea;
+}
+
+/* Warning and completed messages */
+.warning {
+  color: #ff9800;
+  font-weight: bold;
+  animation: blink 1s ease-in-out infinite;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.completed {
+  color: #4CAF50;
+  font-weight: bold;
+  margin-left: 8px;
+  display: inline-block;
+  animation: bounce 0.5s ease;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+  
+  .timer {
+    font-size: 52px;
+    padding: 20px;
+    letter-spacing: 3px;
+  }
+  
+  .buttons button {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+  }
+  
+  .modeButtons button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .container h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .container {
+    background: rgba(30, 30, 47, 0.95);
+  }
+  
+  .container h1 {
+    background: linear-gradient(135deg, #a0a0ff, #c0a0ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  
+  .modeButtons button {
+    background: #2d2d44;
+    color: #ccc;
+    border-color: #444;
+  }
+  
+  .modeButtons button.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+  }
+  
+  .lapsContainer {
+    background: #2d2d44;
+    border-color: #444;
+  }
+  
+  .lapsContainer li {
+    background: #1e1e2f;
+    color: #ccc;
+    border-color: #444;
+  }
+  
+  .emptyLaps {
+    background: #1e1e2f;
+    color: #888;
+  }
+  
+  .status {
+    background: #2d2d44;
+    color: #ccc;
+  }
+  
+  .countdownSetup {
+    background: #2d2d44;
+  }
+  
+  .countdownSetup input {
+    background: #1e1e2f;
+    color: white;
+    border-color: #444;
+  }
+}

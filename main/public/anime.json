@@ -1,0 +1,76 @@
+{
+  "animeList": [
+    {
+      "id": 1,
+      "title": "Attack on Titan",
+      "genre": "Action, Dark Fantasy",
+      "episodes": 87,
+      "rating": 9.0,
+      "description": "Humanity fights for survival against man-eating giants.",
+      "image": "https://m.media-amazon.com/images/S/pv-target-images/1d24ae4aa81c3eeeecd5891b42516885e49464acc1a93aacc152298a86c0a5c3.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Demon Slayer",
+      "genre": "Action, Supernatural",
+      "episodes": 44,
+      "rating": 8.7,
+      "description": "A boy becomes a demon slayer to save his sister.",
+      "image": "https://i.pinimg.com/originals/23/ce/c3/23cec31c918eee058ab6543a926b9227.jpg"
+    },
+    {
+      "id": 3,
+      "title": "One Punch Man",
+      "genre": "Action, Comedy",
+      "episodes": 24,
+      "rating": 8.8,
+      "description": "A hero who can defeat any enemy with one punch.",
+      "image": "https://dailyanimeart.files.wordpress.com/2015/10/one-punch-man-poster.jpg"
+    },
+    {
+      "id": 4,
+      "title": "My Hero Academia",
+      "genre": "Action, Superhero",
+      "episodes": 113,
+      "rating": 8.6,
+      "description": "Boy born without powers trains to become a hero.",
+      "image": "https://i.redd.it/3jpn92exp0r31.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Jujutsu Kaisen",
+      "genre": "Action, Supernatural",
+      "episodes": 24,
+      "rating": 8.9,
+      "description": "A boy swallows a cursed object to fight evil spirits.",
+      "image": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/08/jujutsu-kaisen-season-2-shibuya-incident-poster-cropped.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Naruto Shippuden",
+      "genre": "Action, Adventure",
+      "episodes": 500,
+      "rating": 8.6,
+      "description": "Naruto returns to save his friend Sasuke and protect the village from powerful enemies.",
+      "image": "https://static1.srcdn.com/wordpress/wp-content/uploads/2023/04/naruto-shippuden-tv-series-poster.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Death Note",
+      "genre": "Mystery, Thriller",
+      "episodes": 37,
+      "rating": 9.0,
+      "description": "A genius student gains the power to kill anyone by writing their name in a supernatural notebook.",
+      "image": "https://static1.srcdn.com/wordpress/wp-content/uploads/2024/02/death-note-franchise-poster.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Fullmetal Alchemist: Brotherhood",
+      "genre": "Action, Adventure",
+      "episodes": 64,
+      "rating": 9.1,
+      "description": "Two brothers use alchemy to search for the Philosopher's Stone to restore their bodies.",
+      "image": "https://flxt.tmsimg.com/assets/p9065121_b_h9_aa.jpg"
+    }
+  ]
+}
